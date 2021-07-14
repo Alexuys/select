@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.app{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap{
+    width: 500px;
+    border: 1px solid gray;
+    height: 40px;
+    display: block;
+    
+}
+
+.select{
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.select .select__backdrop{
+    position: fixed;
+    display: none;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+.select .select__dropdown{
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 34px;
+    left: 0;
+    right: 0;
+    max-height: auto;
+    overflow-y: auto;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
+}
+
+.select__input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.select__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+ }
+
+.select__item{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 100%;
+}
+
+.select__item :hover{
+    background-color: #eee;
+    transition: .15s background-color ease-in;
+    cursor: pointer;
+}
+
+.select__item .selected{
+    background-color: bisque;
+}
