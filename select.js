@@ -1,15 +1,14 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
     let text = placeholder ?? 'Placeholder to defolte'
-
     const items = data.map(item => {
         let cls = ''
         if(item.id === selectedId){
-            text = item.value
             cls = 'selected'
             id = item.id
         }
+
         return `
-            <li class = "select__item ${cls}" data-type="item" data-id="${id}">${text}</li>
+            <li class = "select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
         `
     })
 
@@ -45,7 +44,7 @@ class Select{
 
     #setup(){
         this.clickHandler = this.clickHandler.bind(this)
-        this.$el.addEventLstener('click', this.clickHandler)
+        this.$el.addEventListener('click', this.clickHandler)
         this.$arrow = this.$el.querySelector('[data-type="arrow"]')
         this.$value = this.$el.querySelector('[data-type="value"]')
     }
